@@ -23,7 +23,7 @@ app.post('/hello', function (req, res, next) {
 
 	// Loop otherwise..
 	if (req.body.user_name !== 'slackbot') {
-		return res.status(200).json(createPayload('Bonjour ' + user_name + ' :smile:'));
+		return res.status(200).json(createPayload('Bonjour ' + user_id + ' :smile:'));
 	} else {
 		return res.status(200).end();
 	}
@@ -33,7 +33,7 @@ app.post('/bye', function (req, res, next) {
 #	var UserName = req.body.user_name;
 
 	if (req.body.user_name !== 'slackbot') {
-		return res.status(200).json(createPayload('Aurevoir ' + user_name + ' :upside_down_face:'));
+		return res.status(200).json(createPayload('Aurevoir ' + user_id + ' :upside_down_face:'));
 	} else {
 		return res.status(200).end();
 	}
