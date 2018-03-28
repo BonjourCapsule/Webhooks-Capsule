@@ -23,7 +23,7 @@ app.post('/hello', function (req, res, next) {
 
 	// Loop otherwise..
 	if (req.body.user_name !== 'slackbot') {
-		return res.status(200).json(createPayload('Bonjour <@' + userId + '> :smile:'));
+		return res.status(200).json(createPayload('Bonjour ' + userId + ' :smile:'));
 	} else {
 		return res.status(200).end();
 	}
