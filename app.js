@@ -19,21 +19,21 @@ function createPayload (text) {
 }
 
 app.post('/hello', function (req, res, next) {
-//	var UserName = req.body.user_name;
+	var userId = req.body.user_id;
 
 	// Loop otherwise..
 	if (req.body.user_name !== 'slackbot') {
-		return res.status(200).json(createPayload('Bonjour ' + user_name + ' :smile:'));
+		return res.status(200).json(createPayload('Bonjour ' + userId + ' :smile:'));
 	} else {
 		return res.status(200).end();
 	}
 });
 
 app.post('/bye', function (req, res, next) {
-//	var UserName = req.body.user_name;
+	var userId = req.body.user_id;
 
 	if (req.body.user_name !== 'slackbot') {
-		return res.status(200).json(createPayload('Aurevoir ' + user_name + ' :upside_down_face:'));
+		return res.status(200).json(createPayload('Aurevoir <@' + userId + '> :upside_down_face:'));
 	} else {
 		return res.status(200).end();
 	}
