@@ -19,7 +19,7 @@ function createPayload (text) {
 }
 
 app.post('/hello', function (req, res, next) {
-	var userId = req.body.user_id;
+	var userId = req.body.user_name;
 
 	// Loop otherwise..
 	if (req.body.user_name !== 'slackbot') {
@@ -30,10 +30,10 @@ app.post('/hello', function (req, res, next) {
 });
 
 app.post('/bye', function (req, res, next) {
-	var userId = req.body.user_id;
+	var userId = req.body.user_name;
 
 	if (req.body.user_name !== 'slackbot') {
-		return res.status(200).json(createPayload('Aurevoir <@' + userId + '> :upside_down_face:'));
+		return res.status(200).json(createPayload('Aurevoir ' + userId + ' :upside_down_face:'));
 	} else {
 		return res.status(200).end();
 	}
