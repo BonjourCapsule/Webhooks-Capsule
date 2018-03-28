@@ -20,11 +20,11 @@ function createPayload (text) {
 
 app.post('/hello', function (req, res, next) {
 	var userName = req.body.user_name;
-	console.log(req.body);
 
 	// Loop otherwise..
 	if (userName !== 'slackbot') {
-		return res.status(200).json(createPayload('Bonjour ' + userName + ' :smile:'));
+// 		return res.status(200).json(createPayload('Bonjour ' + userName + ' :smile:'));
+		return res.status(200).json(createPayload(req.body));
 	} else {
 		return res.status(200).end();
 	}
