@@ -38,3 +38,13 @@ app.post('/bye', function (req, res, next) {
 		return res.status(200).end();
 	}
 });
+
+app.post('/marvin', function (req, res, next) {
+	var userId = req.body.user_id;
+
+	if (req.body.user_name !== 'slackbot') {
+		return res.status(200).json(createPayload('Vous me déprimez...'));
+	} else {
+		return res.status(200).end();
+	}
+});
